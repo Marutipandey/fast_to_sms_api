@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>SMS Detail</h1>
+  <p>To: {{ sms.to_number }}</p>
+  <p>Message: {{ sms.message }}</p>
+  <a href="{% url 'sms_edit' pk=sms.pk %}">Edit</a> <br> <br>
+  <a href="{% url 'sms_list' %}">Back to SMS List</a>
+
+{% endblock %}
+

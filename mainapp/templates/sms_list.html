@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>SMS List</h1>
+  <ul>
+    {% for sms in sms_list %}
+      <li><a href="{% url 'sms_detail' pk=sms.pk %}">{{ sms.to_number }}</a> 
+  <a href="{% url 'sms_delete' pk=sms.pk %}">Delete SMS </a><br><br>
+    
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'sms_new' %}">Send SMS</a>
+{% endblock %}
